@@ -1,0 +1,31 @@
+import java.io.DataInputStream;
+class Nonfibo
+  {
+   public static void main(String args[])
+     {
+      DataInputStream in=new DataInputStream(System.in);
+      int n=0,f1=0,f2=1,f;
+      try
+      {
+       System.out.println("Enter the limit");
+       n=Integer.parseInt(in.readLine());
+      }
+      catch(Exception e)
+       {
+        System.out.println("Error in i/p");
+        System.exit(0);
+       }
+      System.out.println("The Non-fibonacci series is...");
+      for(;;)
+        {
+         f=f1+f2;
+         for(int i=f2+1;i<=n;i++)
+           if(i<f)
+             System.out.println(i);
+         if(f>n)
+           break;
+         f1=f2;
+         f2=f;
+        }
+     }
+  }
